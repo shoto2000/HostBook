@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -20,4 +22,6 @@ public class Employee {
     private String employeeFirstName;
     private String employeeLastName;
     private String employeeEmailId;
+    private LocalDateTime createdTime;
+    private LocalDateTime updatedTime;
 }
