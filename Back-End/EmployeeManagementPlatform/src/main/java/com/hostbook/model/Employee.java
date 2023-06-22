@@ -19,4 +19,5 @@ public class Employee {
     private Integer employeeId;
     private String employeeFirstName;
     private String employeeLastName;
+    private String employeeEmailId;
 }
