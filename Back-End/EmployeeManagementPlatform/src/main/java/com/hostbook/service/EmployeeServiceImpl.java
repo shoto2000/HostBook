@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -24,6 +25,8 @@ public class EmployeeServiceImpl implements EmployeeService{
         Optional<Employee> employeeExist = employeeRepository.findByEmployeeEmailId(employee.getEmployeeEmailId());
 
         if(!employeeExist.isPresent()){
+            employee.setCreatedTime(LocalDateTime.now());
+            employee.setUpdatedTime(LocalDateTime.now());
             return new ResponseEntity<>(employeeRepository.save(employee), HttpStatus.CREATED);
         }
 
@@ -41,6 +44,8 @@ public class EmployeeServiceImpl implements EmployeeService{
 
         if(employeeExist.isPresent()){
             employee.setEmployeeId(employeeExist.get().getEmployeeId());
+            employee.setCreatedTime(employeeExist.get().getCreatedTime());
+            employee.setUpdatedTime(LocalDateTime.now());
             return new ResponseEntity<>(employeeRepository.save(employee),HttpStatus.OK);
         }
 

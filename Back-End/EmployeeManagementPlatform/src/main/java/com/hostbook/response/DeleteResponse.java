@@ -5,16 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class DeleteResponse {
 
-    private String deleteType;
-    private String message = deleteType+" Deleted Successfully";
+    private String message = "Deleted Successfully";
 
     public DeleteResponse(String deleteType)
     {
-        this.deleteType = deleteType;
+        this.message = deleteType +" "+ this.message;
     }
 
 }

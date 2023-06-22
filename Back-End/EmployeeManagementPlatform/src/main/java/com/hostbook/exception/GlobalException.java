@@ -21,7 +21,7 @@ public class GlobalException {
 	public ResponseEntity<CustomExceptionDetails> employeeAlreadyExistExceptionHandler(EmployeeAlreadyExistException userException, WebRequest wr)
 	{
 		CustomExceptionDetails customExceptionDetails = new CustomExceptionDetails(LocalDateTime.now(), userException.getMessage(), wr.getDescription(false));
-		return new ResponseEntity<CustomExceptionDetails>(customExceptionDetails, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<CustomExceptionDetails>(customExceptionDetails, HttpStatus.CONFLICT);
 	}
 	
 	@ExceptionHandler(Exception.class)
