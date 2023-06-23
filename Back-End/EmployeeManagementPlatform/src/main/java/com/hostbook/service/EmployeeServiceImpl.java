@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public ResponseEntity<?> listOfEmployees() {
-        return new ResponseEntity<>(employeeRepository.findAll(),HttpStatus.FOUND);
+        return new ResponseEntity<>(employeeRepository.findAll(),HttpStatus.OK);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         Optional<Employee> employeeExist = employeeRepository.findById(employeeId);
 
         if(employeeExist.isPresent()){
-            return new ResponseEntity<>(employeeExist.get(),HttpStatus.FOUND);
+            return new ResponseEntity<>(employeeExist.get(),HttpStatus.OK);
         }
 
         throw new EmployeeNotFoundException("Employee does not Exist");
