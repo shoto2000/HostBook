@@ -23,7 +23,7 @@ public class EmployeeController {
         return employeeService.listOfEmployees();
     }
 
-    @PostMapping("/edit")
+    @PutMapping("/edit")
     public ResponseEntity<?> updateEmployee(@RequestBody Employee employee, @RequestParam("id") int employeeId){
         return employeeService.updateEmployee(employee,employeeId);
     }

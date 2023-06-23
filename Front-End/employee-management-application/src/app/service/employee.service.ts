@@ -23,7 +23,7 @@ export class EmployeeService {
 
   updateEmployee(emp:Employee,empId:number):Observable<Employee>{
     const updateEmpUrl = `${this.baseUrl}/edit?id=${empId}`
-    return this.http.post<Employee>(updateEmpUrl,emp);
+    return this.http.put<Employee>(updateEmpUrl,emp);
   }
 
   deleteEmployee(empId:number) : Observable<any> {
