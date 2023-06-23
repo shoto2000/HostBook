@@ -22,7 +22,17 @@ export class EmployeeService {
   }
 
   updateEmployee(emp:Employee,empId:number):Observable<Employee>{
-    const updateEmpUrl = `${this.baseUrl}/edit?id={empId}`
-    return this.http.put<Employee>(updateEmpUrl,emp);
+    const updateEmpUrl = `${this.baseUrl}/edit?id=${empId}`
+    return this.http.post<Employee>(updateEmpUrl,emp);
+  }
+
+  deleteEmployee(empId:number) : Observable<any> {
+    const deleteEmpUrl = `${this.baseUrl}/delete?id=${empId}`
+    return this.http.delete<any>(deleteEmpUrl);
+  }
+
+  viewEmployee(empId:number) : Observable<Employee>{
+    const viewEmployee = `${this.baseUrl}/${empId}`
+    return this.http.get<Employee>(viewEmployee);
   }
 }

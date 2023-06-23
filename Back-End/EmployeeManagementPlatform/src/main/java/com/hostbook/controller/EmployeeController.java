@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/employee")
 public class EmployeeController {
 
@@ -24,7 +23,7 @@ public class EmployeeController {
         return employeeService.listOfEmployees();
     }
 
-    @PutMapping("/edit")
+    @PostMapping("/edit")
     public ResponseEntity<?> updateEmployee(@RequestBody Employee employee, @RequestParam("id") int employeeId){
         return employeeService.updateEmployee(employee,employeeId);
     }
