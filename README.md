@@ -48,6 +48,13 @@ Before running the application, make sure you have the following prerequisites i
    ```
    
 4. Compile the code and run it.
+
+## Swagger-UI
+
+After compilation of Backend Code write this in your browser to test APIs
+   ```
+   http://localhost:8080/swagger-ui/index.html
+   ```
    
 
 ## API Endpoints
