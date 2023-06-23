@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.Email;
 
 import java.time.LocalDateTime;
 
@@ -22,7 +21,6 @@ public class Employee {
     private Integer employeeId;
     private String employeeFirstName;
     private String employeeLastName;
-    @Email
     private String employeeEmailId;
     private LocalDateTime createdTime;
     private LocalDateTime updatedTime;
