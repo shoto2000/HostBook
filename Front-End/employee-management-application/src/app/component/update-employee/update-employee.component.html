@@ -1,0 +1,37 @@
+<div class="container-fluid">
+
+    <!-- Edit Employee Modal -->
+  <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">First Name</label>
+                  <input type="text" formControlName="employeeFirstName" class="form-control" id="first-name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                  <input type="text" formControlName="employeeLastName" class="form-control" id="last-name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" formControlName="employeeEmailId" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-success" (ngSubmit)="onSubmit()" data-bs-dismiss="modal">Update</button>
+
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

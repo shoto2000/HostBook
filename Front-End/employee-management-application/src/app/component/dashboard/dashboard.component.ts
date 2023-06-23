@@ -42,6 +42,7 @@ export class DashboardComponent implements OnInit {
     this.empService.addEmployee(this.empObj).subscribe(
       (res) => {
         console.log(res);
+        this.getAllEmployee();
       },
       (err) => {
         alert(err.error.message);
