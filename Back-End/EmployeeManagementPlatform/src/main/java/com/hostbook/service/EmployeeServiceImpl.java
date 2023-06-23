@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,7 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeRepository employeeRepository;
 
     @Override
-    public ResponseEntity<?> createEmployee(Employee employee) {
+    public ResponseEntity<Employee> createEmployee(Employee employee) {
         Optional<Employee> employeeExist = employeeRepository.findByEmployeeEmailId(employee.getEmployeeEmailId());
 
         if(!employeeExist.isPresent()){
@@ -34,12 +35,12 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public ResponseEntity<?> listOfEmployees() {
+    public ResponseEntity<List<Employee>> listOfEmployees() {
         return new ResponseEntity<>(employeeRepository.findAll(),HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<?> updateEmployee(Employee employee, int employeeId) {
+    public ResponseEntity<Employee> updateEmployee(Employee employee, int employeeId) {
         Optional<Employee> employeeExist = employeeRepository.findById(employeeId);
 
         if(employeeExist.isPresent()){
@@ -65,7 +66,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public ResponseEntity<?> viewEmployee(int employeeId) {
+    public ResponseEntity<Employee> viewEmployee(int employeeId) {
         Optional<Employee> employeeExist = employeeRepository.findById(employeeId);
 
         if(employeeExist.isPresent()){
